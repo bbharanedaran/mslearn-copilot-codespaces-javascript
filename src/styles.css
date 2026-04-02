@@ -122,10 +122,21 @@ a:hover {
 img.socialIcon {
   height: 30px;
   width: 30px;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  filter: grayscale(20%);
 }
 
-/* add an amazing animation to the social icons */
 img.socialIcon:hover {
-  transform: scale(1.2);
-  transition: transform 0.3s ease;
+  transform: scale(1.15) rotate(5deg);
+  filter: grayscale(0%) drop-shadow(0 4px 8px rgba(78, 86, 126, 0.3));
+  animation: pulse-glow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes pulse-glow {
+  0% {
+    box-shadow: 0 0 5px rgba(78, 86, 126, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(78, 86, 126, 0.6), 0 0 30px rgba(78, 86, 126, 0.4);
+  }
 }
